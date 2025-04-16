@@ -59,7 +59,7 @@
 }
 
 h2 {
-  color: #28a745; /* Color verde */
+  color: #28a745; 
 }
 
 

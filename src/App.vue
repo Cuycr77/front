@@ -1,13 +1,19 @@
 <template>
   <div id="app">
     <headerPagina />
-    <router-view></router-view>
+    <router-view></router-view> <!-- Aquí se cargan las vistas -->
   </div>
 </template>
 
 <script setup>
-import ConsultaProductos from './components/consultaProductos.vue';
+import { onMounted } from 'vue';
+import { useRouter } from 'vue-router';
 import headerPagina from './components/headerPagina.vue';
-import reegistrarClientes from './components/reegistrarClientes.vue';
-import registrarProducto from './components/registrarProducto.vue';
+import { startSessionChecker } from './utils/sessionManager';
+
+const router = useRouter();
+
+onMounted(() => {
+  startSessionChecker(router);
+});
 </script>
